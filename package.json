@@ -1,0 +1,27 @@
+{
+  "name": "react_repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishikrc3/React_Repo.git"
+  },
+  "author": "Rishik Chakravarty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishikrc3/React_Repo/issues"
+  },
+  "homepage": "https://github.com/rishikrc3/React_Repo#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.2",
+    "process": "^0.11.10"
+  }
+}
