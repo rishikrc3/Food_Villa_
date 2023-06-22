@@ -18,8 +18,9 @@
 import { createElement } from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = createElement("h1", { id: "title", key: "h1" }, "Lojens");
 const heading2 = <h1>Oreo</h1>;
 
+const HeaderComponent = () => <h1>Hue </h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root1"));
-root.render(heading2);
+root.render(<HeaderComponent />);
