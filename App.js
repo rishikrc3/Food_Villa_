@@ -12,16 +12,14 @@
  * Manages the port
  * Consistent Hashing Algorithm
  * Zero Config
+ * Tree Shaking-removing unwanted code
+ * Transitive Dependancies
  */
-
-import React from "react";
+import { createElement } from "react";
 import ReactDOM from "react-dom/client";
-const heading = React.createElement("h1", { id: "title" }, "Hi for parcel");
-const heading2 = React.createElement("h2", { id: "title" }, "Fok");
-const container = React.createElement("div", { id: "container" }, [
-  heading,
-  heading2,
-]);
+
+const heading = createElement("h1", { id: "title", key: "h1" }, "Lojens");
+const heading2 = <h1>Oreo</h1>;
 
 const root = ReactDOM.createRoot(document.getElementById("root1"));
-root.render(container);
+root.render(heading2);
