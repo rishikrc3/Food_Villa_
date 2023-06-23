@@ -55,5 +55,5 @@ const AppLayout = () => {
   );
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//root.render(<Header />);
+
 root.render(<AppLayout></AppLayout>);
