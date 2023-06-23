@@ -807,15 +807,47 @@ const restaurantList = [
     subtype: "basic",
   },
 ];
-const RestrauntCard = ({ restaurant }) => {
-  const {
-    name,
-    cuisines,
-    cloudinaryImageId,
-    lastMileTravelString,
-    costForTwoString,
-    avgRating,
-  } = restaurant.data;
+// const RestrauntCard = ({ restaurant }) => {
+//   const {
+//     name,
+//     cuisines,
+//     cloudinaryImageId,
+//     lastMileTravelString,
+//     costForTwoString,
+//     avgRating,
+//   } = restaurant.data;
+//   return (
+//     <div className="card">
+//       <img
+//         src={
+//           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+//           cloudinaryImageId
+//         }
+//       />
+//       <h2>{name}</h2>
+//       <h3>{cuisines.join(", ")}</h3>
+//       <h1>{lastMileTravelString} minutes</h1>
+//       <span>
+//         <h4>
+//           <i class="fa-solid fa-star"></i>
+//           {avgRating}
+//         </h4>
+//         <h4>{lastMileTravelString}</h4>
+//         <h4>{costForTwoString}</h4>
+//       </span>
+//     </div>
+//   );
+// };
+
+const RestaurantCard = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  area,
+  lastMileTravelString,
+  costForTwoString,
+  avgRating,
+}) => {
   return (
     <div className="card">
       <img
@@ -825,8 +857,8 @@ const RestrauntCard = ({ restaurant }) => {
         }
       />
       <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h1>{lastMileTravelString} minutes</h1>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{area}</h4>
       <span>
         <h4>
           <i class="fa-solid fa-star"></i>
@@ -838,7 +870,6 @@ const RestrauntCard = ({ restaurant }) => {
     </div>
   );
 };
-
 //Config Driven UI
 
 //props
@@ -846,12 +877,16 @@ const Body = () => {
   return (
     <div className="restaurant-list">
       {/* {RestrauntCard()} */}
-      <RestrauntCard restaurant={restaurantList[0]} />
+      {/* <RestrauntCard restaurant={restaurantList[0]} />
       <RestrauntCard restaurant={restaurantList[1]} />
       <RestrauntCard restaurant={restaurantList[2]} />
       <RestrauntCard restaurant={restaurantList[3]} />
       <RestrauntCard restaurant={restaurantList[4]} />
-      <RestrauntCard restaurant={restaurantList[5]} />
+      <RestrauntCard restaurant={restaurantList[5]} /> */}
+
+      {restaurantList.map((restaurant) => {
+        return <RestaurantCard key={restaurant.data.id} {...restaurant.data} />;
+      })}
     </div>
   );
 };
