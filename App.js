@@ -873,6 +873,8 @@ const RestaurantCard = ({
 //Config Driven UI
 
 //props
+
+//no key<<<<<<<<, index key(ok way)<<< unique key(best practice)
 const Body = () => {
   return (
     <div className="restaurant-list">
