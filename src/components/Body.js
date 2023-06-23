@@ -1,4 +1,4 @@
-import { restaurantList } from "./constants";
+import { restaurantList } from "../constants";
 import { RestaurantCard } from "./RestrauntCard";
 const Body = () => {
   return (
