@@ -808,8 +808,14 @@ const restaurantList = [
   },
 ];
 const RestrauntCard = ({ restaurant }) => {
-  const { name, cuisines, cloudinaryImageId, lastMileTravelString } =
-    restaurant.data;
+  const {
+    name,
+    cuisines,
+    cloudinaryImageId,
+    lastMileTravelString,
+    costForTwoString,
+    avgRating,
+  } = restaurant.data;
   return (
     <div className="card">
       <img
@@ -821,6 +827,14 @@ const RestrauntCard = ({ restaurant }) => {
       <h2>{name}</h2>
       <h3>{cuisines.join(", ")}</h3>
       <h1>{lastMileTravelString} minutes</h1>
+      <span>
+        <h4>
+          <i class="fa-solid fa-star"></i>
+          {avgRating}
+        </h4>
+        <h4>{lastMileTravelString}</h4>
+        <h4>{costForTwoString}</h4>
+      </span>
     </div>
   );
 };
