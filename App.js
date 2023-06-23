@@ -807,33 +807,37 @@ const restaurantList = [
     subtype: "basic",
   },
 ];
-const RestrauntCard = () => {
+const RestrauntCard = ({ restaurant }) => {
+  const { name, cuisines, cloudinaryImageId, lastMileTravelString } =
+    restaurant.data;
   return (
     <div className="card">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurantList[1].data?.cloudinaryImageId
+          cloudinaryImageId
         }
       />
-      <h2>{restaurantList[0].data?.name}</h2>
-      <h3>{restaurantList[0].data?.cuisines.join(", ")}</h3>
-      <h1>{restaurantList[0].data?.lastMileTravelString} minutes</h1>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h1>{lastMileTravelString} minutes</h1>
     </div>
   );
 };
 
 //Config Driven UI
 
+//props
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestrauntCard></RestrauntCard>
-      <RestrauntCard></RestrauntCard>
-      <RestrauntCard></RestrauntCard>
-      <RestrauntCard></RestrauntCard>
-      <RestrauntCard></RestrauntCard>
-      <RestrauntCard></RestrauntCard>
+      {/* {RestrauntCard()} */}
+      <RestrauntCard restaurant={restaurantList[0]} />
+      <RestrauntCard restaurant={restaurantList[1]} />
+      <RestrauntCard restaurant={restaurantList[2]} />
+      <RestrauntCard restaurant={restaurantList[3]} />
+      <RestrauntCard restaurant={restaurantList[4]} />
+      <RestrauntCard restaurant={restaurantList[5]} />
     </div>
   );
 };
@@ -844,7 +848,7 @@ const Footer = () => {
 const AppLayout = () => {
   return (
     <>
-      <Header />
+      <Header></Header>
       <Body />
       <Footer />
     </>
