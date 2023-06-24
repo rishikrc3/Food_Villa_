@@ -1,6 +1,13 @@
+// const Footer = () => {
+//   return <h5>Footer</h5>;
+// };
+
+// export default Footer;
+
 import { restaurantList } from "../constants";
 import { RestaurantCard } from "./RestrauntCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { swiggy_api_URL } from "../constants";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -12,7 +19,7 @@ function filterData(searchText, restaurants) {
 
 const Body = () => {
   //use state hook is used to create state variables
-  //This is know as two way binding
+  //This is known as two way binding
 
   //in order to filter the restaurants, we use a local state variable to filter the data
   const [restaurants, setRestaurants] = useState(restaurantList);
@@ -23,6 +30,20 @@ const Body = () => {
 
   //searchClick is just used to check if the button has been clicked
   const [searchClicked, setSearchClicked] = useState("false");
+
+  //useEffect is being used, if the useEffect is called with an empty depandancy array, the useEffect will be called just once and that too after the intial render
+
+  // useEffect(() => {
+  //   getRestaurants();
+  // }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(swiggy_api_URL);
+    const json = await data.json;
+    //Optional Chaining is a better way
+    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
   return (
     <>
       <div className="search-container">
