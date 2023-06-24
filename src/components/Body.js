@@ -1,9 +1,3 @@
-// const Footer = () => {
-//   return <h5>Footer</h5>;
-// };
-
-// export default Footer;
-
 import { restaurantList } from "../constants";
 import { RestaurantCard } from "./RestrauntCard";
 import { useEffect, useState } from "react";
