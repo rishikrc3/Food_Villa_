@@ -69,16 +69,7 @@ const Body = () => {
       >
         Search
       </button>
-      <h1>{searchClicked}</h1>
       <div className="restaurant-list">
-        {/* {RestrauntCard()} */}
-        {/* <RestrauntCard restaurant={restaurantList[0]} />
-        <RestrauntCard restaurant={restaurantList[1]} />
-        <RestrauntCard restaurant={restaurantList[2]} />
-        <RestrauntCard restaurant={restaurantList[3]} />
-        <RestrauntCard restaurant={restaurantList[4]} />
-        <RestrauntCard restaurant={restaurantList[5]} /> */}
-
         {restaurants.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
