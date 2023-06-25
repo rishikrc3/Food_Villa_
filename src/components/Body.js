@@ -50,31 +50,6 @@ const Body = () => {
   if (!restaurants) return null;
   return (
     <>
-      {/* <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="search"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-      </div>
-      <button
-        className="search-btn"
-        onClick={() => {
-          setSearchClicked("true");
-
-          //data is used to filter the restaurants
-          const data = filterData(searchText, restaurants);
-          setRestaurants(data);
-        }}
-      >
-        Search
-        
-      </button> */}
-
       <div className="search-container">
         <input
           type="text"
