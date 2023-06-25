@@ -45,6 +45,11 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
+
+//never create a component inside a component, you can cascade them but never create them
+//never wirte useState inside a if condition
+//useState should never be called inside the functinoal component
+
 const AppLayout = () => {
   return (
     <>

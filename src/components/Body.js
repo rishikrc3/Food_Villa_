@@ -2,6 +2,7 @@ import { restaurantList } from "../constants";
 import { RestaurantCard } from "./RestrauntCard";
 import { useEffect, useState } from "react";
 import { swiggy_api_URL } from "../constants";
+import Shimmer from "./Shimmer";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -69,13 +70,17 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
-        {restaurants.map((restaurant) => {
-          return (
-            <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
-          );
-        })}
-      </div>
+      {restaurants.length === 0 ? (
+        <Shimmer></Shimmer>
+      ) : (
+        <div className="restaurant-list">
+          {restaurants.map((restaurant) => {
+            return (
+              <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };
