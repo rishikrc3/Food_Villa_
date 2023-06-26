@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../assests/img/Food_villa.png";
+import { Link } from "react-router-dom";
 const Title = () => (
   <a href="/">
     <img className="logo" src={Logo} alt="logo" />
@@ -15,8 +16,13 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+
           <li>Contact</li>
           <li>
             <i className="fa-solid fa-cart-shopping"></i>

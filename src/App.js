@@ -46,7 +46,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import About from "./components/About";
+import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 //never create a component inside a component, you can cascade them but never create them
 //never wirte useState inside a if condition
 //useState should never be called inside the functinoal component
@@ -64,6 +66,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error></Error>,
   },
   {
     path: "/about",
