@@ -48,6 +48,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import RestaurantMenu from "./RestaurantMenu";
 import {
   createBrowserRouter,
   Outlet,
@@ -93,6 +94,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/restaurant/:id",
+    element: <RestaurantMenu />,
   },
 ]);
 
