@@ -47,7 +47,14 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contact from "./components/Contact";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 //never create a component inside a component, you can cascade them but never create them
 //never wirte useState inside a if condition
@@ -57,7 +64,7 @@ const AppLayout = () => {
   return (
     <>
       <Header></Header>
-      <Body />
+      <Outlet></Outlet>
       <Footer></Footer>
     </>
   );
@@ -67,10 +74,25 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <Error></Error>,
+    children: [
+      { path: "/", element: <Body /> },
+      // {
+      //   path: "/about",
+      //   element: <About />,
+      // },
+      // {
+      //   path: "/contact",
+      //   element: <Contact />,
+      // },
+    ],
   },
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 
